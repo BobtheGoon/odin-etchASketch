@@ -1,0 +1,16 @@
+#container {
+    display: flex;
+    margin: 100px;
+    width: auto;
+    height: auto;
+    border-style: solid;
+}
+
+.pixel {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 1px;
+    
+}
