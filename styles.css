@@ -1,16 +1,27 @@
 #container {
     display: flex;
-    margin: 100px;
-    width: auto;
-    height: auto;
+    flex-direction: column;
+    margin: auto;
+    width: 600px;
+    height: 600px;
     border-style: solid;
+    border-width: 3px;
 }
 
-.pixel {
+.pixel,
+.vertical,
+.horizontal {
+    display: flex;
+    flex: 1 1 auto;
     background-color: red;
-    width: 10px;
-    height: 10px;
     border-style: solid;
     border-width: 1px;
-    
+}
+
+.vertical {
+    background-color: aqua;
+}
+
+.horizontal {
+    background-color: blueviolet;
 }
