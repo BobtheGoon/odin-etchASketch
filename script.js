@@ -19,8 +19,8 @@ function createGrid(size) {
 function clearGrid() {
     const divs = document.getElementsByTagName('div');
     
-    for (div of divs) {
-        div.style.backgroundColor = 'white'
+    for (coloreDiv of divs) {
+        coloreDiv.style.backgroundColor = 'white'
     }
 }
 
