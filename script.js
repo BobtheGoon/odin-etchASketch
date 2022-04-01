@@ -15,11 +15,25 @@ function createGrid(size) {
 
 }
 
+
+function clearGrid() {
+    const divs = document.getElementsByTagName('div');
+    
+    for (div of divs) {
+        div.style.backgroundColor = 'white'
+    }
+}
+
+
 createGrid(16)
 
 const div = document.getElementsByClassName('horizontal');
 
 for (i = 0; i<div.length; ++i) {
 div[i].addEventListener('mouseover', function(event) {
-    event.target.style.backgroundColor = 'red';
+    event.target.style.backgroundColor = 'black';
 })}
+
+const btn = document.getElementById('clear');
+
+btn.addEventListener('click', clearGrid)

@@ -17,3 +17,7 @@
     border-style: solid;
     border-width: 0.5px;
 }
+
+#clear {
+    margin: auto;
+}
