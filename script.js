@@ -27,6 +27,7 @@ function clearGrid() {
 
 createGrid(16)
 
+
 const div = document.getElementsByClassName('horizontal');
 
 for (i = 0; i<div.length; ++i) {
@@ -34,6 +35,6 @@ div[i].addEventListener('mouseover', function(event) {
     event.target.style.backgroundColor = 'black';
 })}
 
-const btn = document.getElementById('clear');
 
+const btn = document.getElementById('clear');
 btn.addEventListener('click', clearGrid)
