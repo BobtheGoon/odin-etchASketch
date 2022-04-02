@@ -1,6 +1,11 @@
 function createGrid(size) {
     const container = document.getElementById('container');
 
+    if (size > 100) {
+        newSize = parseInt(prompt('Size of grid is too large, please enter a smaller grid size!'))
+        createGrid(newSize)
+    }
+
     if (container.hasChildNodes()) {
         while(container.hasChildNodes()) {
             container.removeChild(container.firstChild);
@@ -36,7 +41,7 @@ function clearGrid() {
 
 
 function promptNewGrid() {
-    let gridSize = prompt('Input grid size')
+    let gridSize = parseInt(prompt('Input grid size'))
     createGrid(gridSize)
 }
 
