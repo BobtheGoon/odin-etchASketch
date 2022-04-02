@@ -35,7 +35,6 @@ function clearGrid() {
     for (coloreDiv of divs) {
         coloreDiv.style.backgroundColor = 'white'
     }
-
     promptNewGrid()
 }
 
@@ -43,6 +42,12 @@ function clearGrid() {
 function promptNewGrid() {
     let gridSize = parseInt(prompt('Input grid size'))
     createGrid(gridSize)
+}
+
+
+function toggleGrid() {
+    const vertical = document.querySelector('.vertical')
+    vertical.setAttribute('style', 'border-style: none')
 }
 
 
@@ -59,4 +64,7 @@ function addGridListener() {
 createGrid(16)
 
 const btn = document.getElementById('clear');
-btn.addEventListener('click', clearGrid)
+btn.addEventListener('click', clearGrid);
+
+const grid = document.getElementById('grid');
+grid.addEventListener('click', toggleGrid);
