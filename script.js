@@ -5,13 +5,11 @@ function createGrid(size) {
         newSize = parseInt(prompt('Size of grid is too large, please enter a smaller grid size!'))
         createGrid(newSize)
     }
-
     if (container.hasChildNodes()) {
         while(container.hasChildNodes()) {
             container.removeChild(container.firstChild);
         }
     }
-
     if (!container.hasChildNodes()) {
         for (let i = 0; i < size; ++i) {
             outerDiv = document.createElement('div');
@@ -46,7 +44,6 @@ function promptNewGrid() {
 
 
 function toggleGrid() {
-
     if (gridOn){
         const vertical = document.querySelectorAll('.vertical')
         const horizontal = document.querySelectorAll('.horizontal')
@@ -73,7 +70,6 @@ function toggleGrid() {
             box.setAttribute('style', 'border-style: solid')
         })
         gridOn = true
-
     }
 }
 
@@ -83,17 +79,21 @@ function addGridListener() {
 
     for (i = 0; i<div.length; ++i) {
     div[i].addEventListener('mouseover', function(event) {
-        event.target.style.backgroundColor = 'black';
+        event.target.style.backgroundColor = gridColor;
     })}
 }
 
 
+
 createGrid(16)
-let gridOn = true
+let gridOn = true;
+let gridColor = 'black';
 
-
-const btn = document.getElementById('clear');
-btn.addEventListener('click', clearGrid);
+const clear = document.getElementById('clear');
+clear.addEventListener('click', clearGrid);
 
 const grid = document.getElementById('grid');
 grid.addEventListener('click', toggleGrid);
+
+//const rainbow = document.getElementById('rainbow');
+//rainbow.addEventListener('click', );
