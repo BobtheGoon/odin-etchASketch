@@ -46,8 +46,35 @@ function promptNewGrid() {
 
 
 function toggleGrid() {
-    const vertical = document.querySelector('.vertical')
-    vertical.setAttribute('style', 'border-style: none')
+
+    if (gridOn){
+        const vertical = document.querySelectorAll('.vertical')
+        const horizontal = document.querySelectorAll('.horizontal')
+
+        vertical.forEach((box) => {
+            box.setAttribute('style', 'border-style: none')
+        })
+
+        horizontal.forEach((box) => {
+            box.setAttribute('style', 'border-style: none')
+        })
+        gridOn = false
+    }
+
+    else if (!gridOn) {
+        const vertical = document.querySelectorAll('.vertical')
+        const horizontal = document.querySelectorAll('.horizontal')
+
+        vertical.forEach((box) => {
+            box.setAttribute('style', 'border-style: solid')
+        })
+
+        horizontal.forEach((box) => {
+            box.setAttribute('style', 'border-style: solid')
+        })
+        gridOn = true
+
+    }
 }
 
 
@@ -62,6 +89,8 @@ function addGridListener() {
 
 
 createGrid(16)
+let gridOn = true
+
 
 const btn = document.getElementById('clear');
 btn.addEventListener('click', clearGrid);
