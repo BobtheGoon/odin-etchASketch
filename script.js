@@ -79,15 +79,36 @@ function addGridListener() {
 
     for (i = 0; i<div.length; ++i) {
     div[i].addEventListener('mouseover', function(event) {
-        event.target.style.backgroundColor = gridColor;
+        event.target.style.backgroundColor = fillColor();
     })}
 }
 
 
+function rainbowOn () {
+    if (!rainbowColor) {
+        rainbowColor = true;
+    }
+    else {
+        rainbowColor = false;
+    }
+}
+
+
+function fillColor() {
+    if (rainbowColor) {
+        gridColor = Math.floor(Math.random()*16777215).toString(16);
+        gridColor = '#' + gridColor
+    }
+    else {
+        gridColor = 'black';
+    }
+    return gridColor
+}
 
 createGrid(16)
-let gridOn = true;
 let gridColor = 'black';
+let gridOn = true;
+let rainbowColor = false;
 
 const clear = document.getElementById('clear');
 clear.addEventListener('click', clearGrid);
@@ -95,5 +116,5 @@ clear.addEventListener('click', clearGrid);
 const grid = document.getElementById('grid');
 grid.addEventListener('click', toggleGrid);
 
-//const rainbow = document.getElementById('rainbow');
-//rainbow.addEventListener('click', );
+const rainbow = document.getElementById('rainbow');
+rainbow.addEventListener('click', rainbowOn);
